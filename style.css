@@ -1,0 +1,22 @@
+body {
+   background-color: rgb(2, 19, 255);
+}
+
+.timer {
+   display: flex;
+   justify-content: center;
+   padding-top: 200px;
+   font-size: 40px;
+   line-height: 1.71;
+   letter-spacing: 0.05em;
+}
+
+.field {
+   margin-left: 20px;
+   border-radius: 45%;
+   background: rgb(30, 255, 0);
+   padding: 30px;
+   font-size: 40px;
+   line-height: 1.71;
+   letter-spacing: 0.05em;
+}
