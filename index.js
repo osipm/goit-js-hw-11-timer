@@ -6,21 +6,16 @@ const s = document.querySelector('#timer-1');
 
 const targetDate = new Date('jan 1, 2022 00:00:00');
 
-// new CountdownTimer({
-//   selector: '#timer-1',
-//   targetDate: new Date('jan 1, 2022 00:00:00'),
-// });
-
 let interval = null;
 function CountdownTimer() {
     const currentDate = new Date();
     let time = targetDate - currentDate;
     if(time>0){
-const days = Math.floor(time / (1000 * 60 * 60 * 24));
-const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((time % (1000 * 60)) / 1000);
-    
+const days = String(Math.floor(time / (1000 * 60 * 60 * 24))).padStart(3, '0');
+const hours = String(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+const mins = String(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+    const secs = String(Math.floor((time % (1000 * 60)) / 1000)).padStart(2, '0');
+        
         day.textContent = `${days}`;
         hour.textContent = `${hours}`;
         min.textContent = `${mins}`;
@@ -30,4 +25,3 @@ const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
 }
     
 interval = setInterval(CountdownTimer, 1000);
-
